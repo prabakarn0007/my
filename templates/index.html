@@ -1,0 +1,156 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title> Corona Virus Predictor </title>
+        <link rel="shortcut icon" href="{% static '/images/corona-favicon.ico' %}">
+       
+        <!-- Font Family -->
+          <script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+          <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+        <!-- CSS -->
+          <link rel="stylesheet" type="text/css" href="{% static '/css/symptoms_predictor_styles.css' %}">
+    </head>
+
+    <body>
+      <!-- header -->
+          <header>
+                 <nav>
+                      <div class="logo"> 
+                      <h1 class=" "> Novel Corona Virus Prediction </h1>
+                      </div>
+                </nav>
+         </header>
+
+    <!-- Website Title -->
+    	<div class="container">
+            <h2 class='container-heading'><span class='heading_first'> Novel Corona Virus Prediction for </span><span class="heading_second"> Indian People's </span></h2>
+    	</div>
+
+        <!-- Prediction Form -->
+            <div class='div2'>
+                <form action="predict/"  method="POST">
+                  {% csrf_token %}
+                 <input class="form-input" type="text" name="age" placeholder="Enter Your Age(Year) eg. 45"><br>
+                 <input class="form-input" type="text" name="body_temperature" placeholder="Enter Your Body Temperature eg. 94.2"><br>
+
+        <!-- Gender Dropdown -->
+                     {% csrf_token %}
+                    <select class="form-input align-center" name="Gender_Male">
+                        <option value="none">--- Select a Gender ---</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select><br>
+
+        <!-- Dry Cough Dropdown -->
+                     {% csrf_token %}
+                    <select class="form-input align-center" name="Dry_Cough_Yes">
+                        <option value="none">--- Do you have Dry Cough? ---</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select><br>
+
+        <!-- Sour Throat Dropdown -->
+                     {% csrf_token %}
+                    <select class="form-input align-center" name="sour_throat_Yes">
+                        <option value="none">--- Do you have Sore Throat? ---</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select><br>
+
+
+        <!-- Weakness Dropdown -->
+                     {% csrf_token %}
+                    <select class="form-input align-center" name="weakness_Yes">
+                        <option value="none">--- Do you have Weakness? ---</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select><br>
+
+
+        <!-- Breathing Dropdown -->
+                     {% csrf_token %}
+                    <select class="form-input align-center" name="breathing_problem_Yes">
+                        <option value="none">--- Do you have Breathing Problem? ---</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select><br>
+
+       <!-- PIC Dropdown -->
+                     {% csrf_token %}
+                    <select class="form-input align-center" name="PIC_Yes">
+                        <option value="none">--- Do you have Chest Pain? ---</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select><br>
+
+       <!-- ICTIP Dropdown -->
+                     {% csrf_token %}
+                    <select class="form-input align-center" name="ICTIP_Yes">
+                        <option value="none">--- Do you have come in contact with Infected People? ---</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select><br>
+
+       <!-- Diabetes Dropdown -->
+                     {% csrf_token %}
+                    <select class="form-input align-center" name="diabetes_Yes">
+                        <option value="none">--- Do you have Diabetes? ---</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select><br>
+
+       <!-- Heart_Disease Dropdown -->
+                     {% csrf_token %}
+                    <select class="form-input align-center" name="heart_disease_Yes">
+                        <option value="none">--- Do you have Heart Disease? ---</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select><br>
+
+       <!-- Lung_Disease Dropdown -->
+                     {% csrf_token %}
+                    <select class="form-input align-center" name="lung_disease_Yes">
+                        <option value="none">--- Do you have Lung Disease? ---</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select><br>
+
+       <!-- Kidney Disease Dropdown -->
+                     {% csrf_token %}
+                    <select class="form-input align-center" name="kidney_disease_Yes">
+                        <option value="none">--- Do you have Kidney Disease ---</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select><br>
+
+       <!-- HBP Dropdown -->
+                     {% csrf_token %}
+                    <select class="form-input align-center" name="HBP_Yes">
+                        <option value="none">--- Do you have High Blood Pressue? ---</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select><br>
+
+
+                             <input type="submit" class="myButton" value="Predict">
+                </form>
+           </div>
+
+<!-- FOOTER -->
+      <div class="footer">
+         <div class="contact"> 
+               <a target="_blank" href="https://www.linkedin.com/in/gokul-patil-0a6a96189"><i class="fab fa-linkedin fa-lg contact-icon"></i></a>
+               <a target="_blank" href="https://github.com/gokul-patil0509/Novel-Corona-Virus-Symptoms-Prediction-Deployment"><i class="fab fa-github fa-lg contact-icon"></i></a>
+         </div>
+         <div class='description'>
+    		  <p>A Machine Learning Web App, Built with Django, Deployed using Heroku.</p>
+    	 </div>
+           <p class='footer-description'>Made with ❤️ by Gokul Patil </p>
+      </div>
+
+    </body>
+</html>

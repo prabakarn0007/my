@@ -1,0 +1,1 @@
+web: gunicorn Covid19_Symptoms_Prediction.wsgi --log-file -

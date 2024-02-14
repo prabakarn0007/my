@@ -1,0 +1,74 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title> Corona Virus Predictor </title>
+        <link rel="shortcut icon" href="{% static '/images/corona-favicon.ico' %}">
+       
+        <!-- Font Family -->
+          <script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+          <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+          <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"  rel="stylesheet">
+
+        <!-- CSS -->
+          <link rel="stylesheet" type="text/css" href="{% static '/css/symptoms_predictor_styles.css' %}">
+    </head>
+
+    <body>
+      <!-- header -->
+          <header>
+                 <nav>
+                      <div class="logo"> 
+                      <h1 class=" "> Novel Corona Virus Prediction </h1>
+                      </div>
+                </nav>
+         </header>
+
+    <!-- Website Title -->
+    	<div class="container">
+            <h2 class='container-heading'><span class='heading_first'> Novel Corona Virus Prediction for </span><span class="heading_second"> Indian People's </span></h2>
+            <div class='header-description'>
+    		 <p><span class='f_description'> I Protect You...!! </span></p>
+                 <p><span class='s_description'> You Protect Me...!!! </span></p> 
+            </div>
+    	</div>
+
+
+         <!-- Result -->
+		<div class="results">             
+			 {% if prediction == 0 %}
+				<h1 class="animate__animated animate__heartBeat animate__infinite"><span class='safe'> Don't worry..! You are Safe. </span></h1>
+                                <img class="gif" src="{% static '/images/happy.gif' %}" alt="Happy Image">
+
+			 {% elif prediction == 1 %}
+				<h1 class="animate__animated animate__heartBeat animate__infinite"><span class='danger'> Oops..! You have Symptoms of the Corona Virus. </span></h1>
+                                <img class="gif1" src="{% static '/images/supries.gif' %}" alt="Supries Image">
+                                
+                         {% elif prediction == 2 %}
+				<h1 class="animate__animated animate__heartBeat animate__infinite"><span class='very_danger'> Oops..!! You are Infected with the Corona Virus. </span></h1>
+                                <img class="gif2" src="{% static '/images/shock.gif' %}" alt="Shock Image">
+                                                         
+		         {% endif %}                     
+
+        <!-- Massages -->
+                     <div class='msg'>
+                           <p><span class='first_messages'> Stay Home..!, </span><span class="second_messages"> Stay Safe...!! </span></p> 
+                     </div> 
+               </div>
+
+<!-- FOOTER -->
+      <div class="footer">
+         <div class="contact"> 
+               <a target="_blank" href="https://www.linkedin.com/in/gokul-patil-0a6a96189"><i class="fab fa-linkedin fa-lg contact-icon"></i></a>
+               <a target="_blank" href="https://github.com/gokul-patil0509/Novel-Corona-Virus-Symptoms-Prediction-Deployment"><i class="fab fa-github fa-lg contact-icon"></i></a>
+         </div>
+         <div class='description'>
+    		  <p>A Machine Learning Web App, Built with Django, Deployed using Heroku.</p>
+    	 </div>
+           <p class='footer-description'>Made with ❤️ by Gokul Patil </p>
+      </div>
+
+    </body>
+</html>
